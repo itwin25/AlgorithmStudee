@@ -16,7 +16,7 @@
 | 상태 | 번호 | 문제명 |
 | --- | --- | --- |
 | ✅ | 3190 | [뱀](https://www.acmicpc.net/problem/3190) |
-| ⬜ | 1038 | [감소하는 수](https://www.acmicpc.net/problem/1038) |
+| ✅ | 1038 | [감소하는 수](https://www.acmicpc.net/problem/1038) |
 | ⬜ | 11559 | [Puyo Puyo](https://www.acmicpc.net/problem/11559) |
 | ⬜ | 12100 | [2048 (Easy)](https://www.acmicpc.net/problem/12100) |
 | ⬜ | 13460 | [구슬 탈출 2](https://www.acmicpc.net/problem/13460) |
