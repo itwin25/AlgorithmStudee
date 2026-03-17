@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BOJ1390_뱀 {
+public class BOJ3190_뱀 {
 
     // 델타배열: 우하좌상
     static int[] dr = {0, 1, 0, -1};
@@ -68,25 +68,11 @@ public class BOJ1390_뱀 {
             int nr = headR + dr[dir];
             int nc = headC + dc[dir];
 
-            // 충돌 체크 (맵 밖으로 나가면 끝)
+            // 충돌 체크 (맵 밖 or 몸 충돌)
             if (nr < 0 || nr >= N || nc < 0 || nc >= N) break;
+            if (map[nr][nc] == 2) break;
 
-            int[] tail = snake.peek();
             boolean isApple = (map[nr][nc] == 1);
-            boolean isTail = (nr == tail[0] && nc == tail[1]);
-
-            // 뱀이 본인 몸을 부딪히면 끝
-            if (map[nr][nc] == 2) {
-
-                // 사과가 있으면 꼬리가 안빠지니까 충돌
-                if (isApple) {
-                    break;
-                }
-                // 꼬리 칸이 아니면 충돌
-                if (!isTail) {
-                    break;
-                }
-            }
 
             // 이동처리
             snake.add(new int[]{nr, nc}); // 머리하나 늘어나고 꼬리는 그대로
@@ -94,11 +80,14 @@ public class BOJ1390_뱀 {
             headR = nr;
             headC = nc;
 
+
             if (!isApple) {
                 // 빈칸인 경우 (사과X)
                 int[] oldTail = snake.poll();
                 map[ oldTail[0] ][ oldTail[1] ] = 0;
             }
+
+
 
 
 
